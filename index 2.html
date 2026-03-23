@@ -3,23 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Visage Skin Laser</title>
-  <meta name="description" content="Luxury skin and laser treatments with refined, results-driven care." />
+  <title>Nova Luxe Med Spa</title>
+  <meta
+    name="description"
+    content="Radiance refined. Elevated beauty treatments tailored to your glow."
+  />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root{
-      --taupe:#b7aaa1;
-      --taupe-dark:#8a7669;
-      --taupe-light:#d8ccc4;
+      --bg:#c5b8ae;
+      --bg-dark:#a79284;
+      --sand:#e9dfd6;
       --cream:#f7f3ef;
-      --text:#2d241f;
-      --muted:#6f625b;
-      --panel:#ffffff;
-      --shadow:0 20px 50px rgba(73,52,41,.16);
-      --radius:22px;
-      --max:1200px;
+      --white:#ffffff;
+      --black:#111111;
+      --text:#2a2521;
+      --muted:#6f655f;
+      --card:#f5f1ed;
+      --accent:#b28b6c;
+      --shadow:0 18px 45px rgba(64,45,32,.16);
+      --radius:24px;
+      --radius-sm:16px;
+      --max:1240px;
     }
 
     *{box-sizing:border-box}
@@ -29,586 +38,679 @@
       font-family:"Inter", sans-serif;
       color:var(--text);
       background:
-        linear-gradient(170deg,var(--taupe) 0 47%, #f2eeea 47% 100%);
-      line-height:1.5;
+        linear-gradient(168deg, var(--bg) 0 62%, #f3efea 62% 100%);
+      overflow-x:hidden;
     }
 
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
+    img{
+      display:block;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
 
     .container{
       width:min(calc(100% - 32px), var(--max));
-      margin:0 auto;
-    }
-
-    .topbar{
-      padding:24px 0 18px;
-    }
-
-    .nav{
-      background:rgba(255,255,255,.78);
-      backdrop-filter: blur(10px);
-      border:1px solid rgba(255,255,255,.65);
-      border-radius:999px;
-      box-shadow:0 10px 30px rgba(0,0,0,.05);
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding:14px 18px;
-      gap:20px;
-      position:sticky;
-      top:16px;
-      z-index:50;
-    }
-
-    .brand{
-      display:flex;
-      flex-direction:column;
-      letter-spacing:.22em;
-      font-size:.72rem;
-    }
-
-    .brand strong{
-      letter-spacing:.03em;
-      font-family:"Cormorant Garamond", serif;
-      font-size:1.85rem;
-      line-height:.9;
-      margin-bottom:3px;
-    }
-
-    .nav-links{
-      display:flex;
-      gap:24px;
-      align-items:center;
-      flex-wrap:wrap;
-      justify-content:center;
-      font-size:.92rem;
-      color:#534841;
-    }
-
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      border-radius:999px;
-      padding:13px 22px;
-      font-weight:600;
-      transition:.25s ease;
-      border:1px solid transparent;
-    }
-
-    .btn-dark{
-      background:#1f1a17;
-      color:#fff;
-    }
-
-    .btn-dark:hover{transform:translateY(-1px); opacity:.95}
-    .btn-light{
-      background:rgba(255,255,255,.83);
-      border-color:rgba(0,0,0,.06);
+      margin-inline:auto;
     }
 
     .hero-wrap{
-      padding:54px 0 52px;
-      text-align:center;
-      color:#fffdfb;
+      padding:48px 0 36px;
     }
 
     .eyebrow{
-      letter-spacing:.28em;
       text-transform:uppercase;
-      font-size:.95rem;
-      margin-bottom:20px;
-      opacity:.95;
+      letter-spacing:.35em;
+      font-size:.88rem;
+      color:rgba(255,255,255,.9);
+      text-align:center;
+      margin:10px 0 0;
+      font-weight:500;
     }
 
-    h1{
-      font-family:"Cormorant Garamond", serif;
-      font-size:clamp(3.2rem, 7vw, 6rem);
-      line-height:.94;
-      font-weight:600;
+    .brand-intro{
+      text-align:center;
+      color:var(--white);
+      margin-bottom:34px;
+    }
+
+    .brand-intro h1{
       margin:0;
+      font-family:"Cormorant Garamond", serif;
+      font-size:clamp(3.6rem, 8vw, 6.4rem);
+      font-weight:600;
+      line-height:.95;
+      letter-spacing:-.02em;
     }
 
-    .hero-sub{
-      max-width:760px;
-      margin:18px auto 28px;
-      color:#f7f2ee;
-      font-size:1.08rem;
-    }
-
-    .hero-card{
-      margin-top:38px;
-      background:var(--panel);
+    .site-shell{
+      background:rgba(255,255,255,.38);
+      border:1px solid rgba(255,255,255,.4);
+      backdrop-filter:blur(8px);
       border-radius:28px;
       box-shadow:var(--shadow);
+      padding:14px;
+    }
+
+    .site-frame{
+      background:var(--white);
+      border-radius:22px;
       overflow:hidden;
-      border:1px solid rgba(120,97,82,.08);
-      text-align:left;
     }
 
-    .hero-grid{
-      display:grid;
-      grid-template-columns:1.35fr .85fr;
-      min-height:560px;
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      padding:18px 24px;
+      border-bottom:1px solid #ece7e2;
+      background:rgba(255,255,255,.92);
     }
 
-    .hero-image{
+    .logo{
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+    }
+
+    .logo .main{
+      font-weight:700;
+      letter-spacing:.08em;
+      font-size:1rem;
+    }
+
+    .logo .sub{
+      font-size:.68rem;
+      letter-spacing:.38em;
+      color:var(--muted);
+      text-transform:uppercase;
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      gap:26px;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+
+    .nav a{
+      font-size:.84rem;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      color:#342c27;
+      font-weight:500;
+    }
+
+    .book-btn{
+      background:var(--black);
+      color:var(--white);
+      padding:12px 18px;
+      border-radius:0;
+      font-size:.8rem;
+      text-transform:uppercase;
+      letter-spacing:.14em;
+      font-weight:600;
+      border:1px solid #000;
+      transition:.25s ease;
+    }
+
+    .book-btn:hover{
+      background:#2f2f2f;
+    }
+
+    .hero{
       position:relative;
+      min-height:620px;
+      overflow:hidden;
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
       background:
-        linear-gradient(120deg, rgba(255,255,255,.2), rgba(255,255,255,0)),
-        url('https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+        linear-gradient(90deg, rgba(0,0,0,.36) 0%, rgba(0,0,0,.12) 34%, rgba(0,0,0,.02) 58%),
+        url("https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
+      transform:scale(1.02);
+    }
+
+    .hero-content{
+      position:relative;
+      z-index:2;
+      display:flex;
+      align-items:center;
+      min-height:620px;
+      padding:58px 44px;
     }
 
     .glass-card{
-      position:absolute;
-      left:38px;
-      bottom:38px;
-      max-width:360px;
-      background:rgba(53,45,40,.48);
-      color:#fff;
-      padding:28px;
-      border-radius:24px;
-      backdrop-filter: blur(10px);
-      box-shadow:0 10px 25px rgba(0,0,0,.18);
+      max-width:470px;
+      background:rgba(68,54,46,.38);
+      backdrop-filter:blur(7px);
+      color:var(--white);
+      padding:34px;
+      border-radius:14px;
+      box-shadow:0 12px 34px rgba(0,0,0,.12);
+      border:1px solid rgba(255,255,255,.14);
     }
 
     .glass-card h2{
-      margin:0 0 10px;
-      font-size:2.15rem;
-      line-height:1;
-      font-family:"Cormorant Garamond", serif;
-      font-weight:600;
+      margin:0 0 14px;
+      font-size:clamp(2rem, 4vw, 3.5rem);
+      line-height:1.02;
+      letter-spacing:-.03em;
     }
 
     .glass-card p{
-      margin:0 0 18px;
-      color:rgba(255,255,255,.9);
-      font-size:.98rem;
+      margin:0 0 24px;
+      color:rgba(255,255,255,.88);
+      font-size:1rem;
+      line-height:1.65;
     }
 
-    .hero-side{
-      padding:34px;
-      background:linear-gradient(180deg,#faf7f4 0%, #f4efea 100%);
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-      gap:22px;
+    .outline-btn{
+      display:inline-block;
+      background:rgba(255,255,255,.16);
+      border:1px solid rgba(255,255,255,.32);
+      color:var(--white);
+      padding:12px 18px;
+      font-size:.82rem;
+      text-transform:uppercase;
+      letter-spacing:.16em;
+      font-weight:600;
+      transition:.25s ease;
     }
 
-    .mini-card{
-      background:white;
-      border-radius:22px;
-      padding:26px;
-      box-shadow:0 10px 30px rgba(0,0,0,.05);
+    .outline-btn:hover{
+      background:rgba(255,255,255,.24);
     }
 
-    .mini-card.dark{
-      background:#171412;
-      color:#f8f3ef;
-      min-height:220px;
+    .editorial{
+      padding:14px;
+      background:#f1ece7;
     }
 
-    .mini-card h3{
-      margin:0 0 10px;
-      font-family:"Cormorant Garamond", serif;
-      font-size:2rem;
-      line-height:1;
-    }
-
-    .mini-card p{
-      margin:0;
-      color:inherit;
-      opacity:.9;
-    }
-
-    .section{
-      padding:26px 0;
-    }
-
-    .grid{
+    .grid-top{
       display:grid;
-      grid-template-columns: .9fr 1.1fr .85fr;
-      gap:18px;
-      align-items:stretch;
+      grid-template-columns:80px 1.05fr 1fr 120px;
+      gap:14px;
+      margin-bottom:14px;
+    }
+
+    .grid-bottom{
+      display:grid;
+      grid-template-columns:1fr 1.05fr .8fr;
+      gap:14px;
     }
 
     .panel{
-      background:#fff;
-      border-radius:24px;
-      box-shadow:0 10px 30px rgba(0,0,0,.04);
+      border-radius:10px;
       overflow:hidden;
-      border:1px solid rgba(120,97,82,.08);
+      background:var(--card);
+      min-height:240px;
+      position:relative;
     }
 
-    .panel.padded{padding:30px}
-    .panel-tall{min-height:340px}
-
-    .about-side{
-      background:#cdbfb4;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      min-height:340px;
-      writing-mode:vertical-rl;
-      text-orientation:mixed;
-      transform:rotate(180deg);
-      letter-spacing:.22em;
-      font-weight:600;
-      font-size:.9rem;
-      text-transform:uppercase;
+    .panel.tall{
+      min-height:430px;
     }
 
-    .image-soft{
-      background:url('https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=900&q=80') center/cover no-repeat;
-      min-height:340px;
-    }
-
-    .dark-copy{
-      background:#11100f;
-      color:#f6f0eb;
-      padding:34px;
-      min-height:340px;
+    .panel.dark{
+      background:#090909;
+      color:#f5ede7;
+      padding:36px 34px;
       display:flex;
       flex-direction:column;
       justify-content:center;
     }
 
-    .dark-copy h3,
-    .services-copy h3,
-    .cta h3{
+    .panel.soft{
+      background:#efebe7;
+      padding:42px 34px;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-end;
+    }
+
+    .vertical-label{
+      background:#cbbcaf;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:430px;
+    }
+
+    .vertical-label span{
+      writing-mode:vertical-rl;
+      transform:rotate(180deg);
+      text-transform:uppercase;
+      letter-spacing:.2em;
+      font-weight:700;
+      color:#1d1713;
+      font-size:.9rem;
+    }
+
+    .mini-tag{
+      position:absolute;
+      top:18px;
+      left:18px;
+      font-size:.72rem;
+      letter-spacing:.25em;
+      color:#887d75;
+      text-transform:uppercase;
+    }
+
+    .corner-tag{
+      position:absolute;
+      top:18px;
+      left:18px;
+      font-size:1.1rem;
+      letter-spacing:.08em;
+      color:#2c2521;
+      text-transform:uppercase;
+    }
+
+    .panel.dark .small{
+      font-size:.68rem;
+      letter-spacing:.28em;
+      text-transform:uppercase;
+      color:#ab9788;
+      margin-bottom:18px;
+    }
+
+    .panel.dark h3{
+      font-size:2.15rem;
+      line-height:1.1;
+      margin:0 0 18px;
+      letter-spacing:-.03em;
+      color:#f6e5d8;
+    }
+
+    .panel.dark p{
+      font-size:.97rem;
+      line-height:1.75;
+      color:#d8cdc6;
+      margin:0 0 24px;
+    }
+
+    .light-btn{
+      align-self:flex-start;
+      background:#e4d1c5;
+      color:#1c1613;
+      border:1px solid rgba(255,255,255,.1);
+      padding:12px 18px;
+      font-size:.78rem;
+      text-transform:uppercase;
+      letter-spacing:.16em;
+      font-weight:700;
+    }
+
+    .panel.soft h3{
+      margin:0 0 14px;
+      font-size:2rem;
+      line-height:1.12;
+      letter-spacing:-.03em;
+      max-width:290px;
+    }
+
+    .panel.soft p{
+      margin:0;
+      color:#766a63;
+      line-height:1.7;
+      max-width:340px;
+    }
+
+    .right-copy{
+      padding:44px 28px;
+      background:#f7f5f2;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+
+    .right-copy .mini{
+      text-transform:uppercase;
+      letter-spacing:.23em;
+      font-size:.7rem;
+      color:#968a82;
+      margin-bottom:16px;
+    }
+
+    .right-copy h4{
+      margin:0 0 10px;
+      font-size:2rem;
+      line-height:1.1;
+      letter-spacing:-.03em;
+    }
+
+    .right-copy p{
+      margin:0;
+      line-height:1.7;
+      color:#6d625c;
+    }
+
+    .footer-cta{
+      padding:78px 0 92px;
+      text-align:center;
+      color:var(--white);
+    }
+
+    .footer-cta h2{
       font-family:"Cormorant Garamond", serif;
-      font-size:2.2rem;
+      font-size:clamp(2.5rem, 5vw, 4.2rem);
       line-height:1;
       margin:0 0 14px;
+      font-weight:600;
     }
 
-    .dark-copy p,
-    .services-copy p,
-    .cta p{
-      margin:0 0 18px;
-      color:inherit;
-      opacity:.92;
+    .footer-cta p{
+      margin:0 auto 26px;
+      max-width:680px;
+      line-height:1.75;
+      color:rgba(255,255,255,.86);
     }
 
-    .services-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr 1fr;
-      gap:18px;
-      margin-top:18px;
-    }
-
-    .services-copy{
-      padding:34px;
-      min-height:280px;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-    }
-
-    .services-image-a{
-      min-height:280px;
-      background:url('https://images.unsplash.com/photo-1556228578-dd6b2d74d1eb?auto=format&fit=crop&w=900&q=80') center/cover no-repeat;
-    }
-
-    .services-image-b{
-      min-height:280px;
-      background:url('https://images.unsplash.com/photo-1620331311520-246422fd82f9?auto=format&fit=crop&w=900&q=80') center/cover no-repeat;
-    }
-
-    .treatments{
-      padding:66px 0 20px;
-    }
-
-    .section-heading{
-      display:flex;
-      align-items:end;
-      justify-content:space-between;
-      gap:20px;
-      margin-bottom:20px;
-    }
-
-    .section-heading h2{
-      margin:0;
-      font-family:"Cormorant Garamond", serif;
-      font-size:3rem;
-      line-height:.95;
-    }
-
-    .cards{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:18px;
-    }
-
-    .service-card{
+    .footer-cta .book-btn{
+      padding:14px 24px;
       background:#fff;
-      border-radius:22px;
-      padding:26px;
-      box-shadow:0 10px 30px rgba(0,0,0,.04);
-      border:1px solid rgba(120,97,82,.08);
+      color:#1d1613;
+      border:1px solid rgba(255,255,255,.5);
     }
 
-    .service-card span{
-      display:inline-block;
-      margin-bottom:12px;
-      color:var(--taupe-dark);
-      font-size:.88rem;
-      letter-spacing:.14em;
-      text-transform:uppercase;
+    .footer-cta .book-btn:hover{
+      background:#f3ece7;
     }
 
-    .service-card h4{
-      margin:0 0 10px;
-      font-size:1.15rem;
+    .mobile-toggle{
+      display:none;
+      width:44px;
+      height:44px;
+      border:none;
+      border-radius:10px;
+      background:#f2ede8;
+      cursor:pointer;
+      position:relative;
     }
 
-    .service-card p{
-      margin:0;
-      color:#655952;
-      font-size:.96rem;
+    .mobile-toggle span,
+    .mobile-toggle::before,
+    .mobile-toggle::after{
+      content:"";
+      position:absolute;
+      left:11px;
+      width:22px;
+      height:2px;
+      background:#1c1714;
+      transition:.25s ease;
     }
 
-    .cta{
-      margin:52px 0 70px;
-      background:linear-gradient(135deg, #cdbeb3, #a79184);
-      color:#fffdfb;
-      border-radius:28px;
-      padding:42px;
-      box-shadow:var(--shadow);
-    }
+    .mobile-toggle span{ top:21px; }
+    .mobile-toggle::before{ top:14px; }
+    .mobile-toggle::after{ top:28px; }
 
-    .cta-row{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:22px;
-      flex-wrap:wrap;
-    }
-
-    footer{
-      padding:0 0 40px;
-      color:#62554e;
-      font-size:.94rem;
-    }
-
-    .footer-box{
-      display:flex;
-      justify-content:space-between;
-      gap:16px;
-      flex-wrap:wrap;
-      border-top:1px solid rgba(98,85,78,.18);
-      padding-top:20px;
-    }
-
-    @media (max-width: 1080px){
-      .hero-grid,
-      .grid,
-      .cards,
-      .services-grid{
-        grid-template-columns:1fr 1fr;
+    @media (max-width: 1100px){
+      .grid-top{
+        grid-template-columns:80px 1fr 1fr;
       }
 
-      .grid > :last-child,
-      .cards > :last-child{
-        grid-column:span 2;
-      }
-    }
-
-    @media (max-width: 760px){
-      .nav{
-        border-radius:26px;
-        padding:18px;
-      }
-
-      .nav-links{
+      .grid-top .thin-image{
         display:none;
       }
 
-      .hero-wrap{
-        padding-top:24px;
+      .grid-bottom{
+        grid-template-columns:1fr 1fr;
       }
 
-      .hero-grid,
-      .grid,
-      .cards,
-      .services-grid{
-        grid-template-columns:1fr;
+      .grid-bottom .right-copy{
+        grid-column:span 2;
+        min-height:240px;
+      }
+    }
+
+    @media (max-width: 860px){
+      .topbar{
+        padding:16px 18px;
+        position:relative;
       }
 
-      .grid > :last-child,
-      .cards > :last-child{
-        grid-column:auto;
-      }
-
-      .glass-card{
-        position:static;
-        max-width:none;
-        margin:18px;
-      }
-
-      .hero-image{
-        min-height:420px;
-        display:flex;
-        align-items:end;
-      }
-
-      .hero-side,
-      .services-copy,
-      .dark-copy{
-        padding:26px;
-      }
-
-      .section-heading{
+      .mobile-toggle{
         display:block;
       }
 
-      .cta{
-        padding:30px;
+      .nav-wrap{
+        position:absolute;
+        top:100%;
+        left:0;
+        right:0;
+        background:#fff;
+        border-bottom:1px solid #eee5de;
+        padding:14px 18px 18px;
+        display:none;
+      }
+
+      .nav-wrap.open{
+        display:block;
+      }
+
+      .nav{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:14px;
+        margin-bottom:14px;
+      }
+
+      .topbar > .book-btn{
+        display:none;
+      }
+
+      .hero,
+      .hero-content{
+        min-height:520px;
+      }
+
+      .hero-content{
+        padding:24px;
+        align-items:flex-end;
+      }
+
+      .glass-card{
+        padding:26px;
+      }
+
+      .grid-top,
+      .grid-bottom{
+        grid-template-columns:1fr;
+      }
+
+      .vertical-label{
+        min-height:84px;
+      }
+
+      .vertical-label span{
+        writing-mode:horizontal-tb;
+        transform:none;
+      }
+
+      .panel.tall{
+        min-height:280px;
+      }
+
+      .grid-bottom .right-copy{
+        grid-column:auto;
+      }
+    }
+
+    @media (max-width: 520px){
+      .hero-wrap{
+        padding-top:30px;
+      }
+
+      .brand-intro{
+        margin-bottom:22px;
+      }
+
+      .site-shell{
+        padding:10px;
+      }
+
+      .hero-content{
+        padding:18px;
+      }
+
+      .glass-card h2{
+        font-size:2.1rem;
+      }
+
+      .panel.dark,
+      .panel.soft,
+      .right-copy{
+        padding:26px 22px;
+      }
+
+      .footer-cta{
+        padding:60px 0 72px;
       }
     }
   </style>
 </head>
 <body>
-  <div class="container topbar">
-    <nav class="nav">
-      <a href="#" class="brand">
-        <strong>Visage</strong>
-        SKIN • LASER
-      </a>
-
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#treatments">Treatments</a>
-        <a href="#results">Results</a>
-        <a href="#contact">Contact</a>
+  <section class="hero-wrap">
+    <div class="container">
+      <div class="brand-intro">
+        <h1>Nova Luxe</h1>
+        <p class="eyebrow">Premium Med Spa Website</p>
       </div>
 
-      <a class="btn btn-dark" href="https://YOUR-GLOSSGENIUS-LINK.com" target="_blank" rel="noopener noreferrer">Book Now</a>
-    </nav>
-  </div>
+      <div class="site-shell">
+        <div class="site-frame">
+          <header class="topbar">
+            <div class="logo">
+              <span class="main">NOVA LUXE</span>
+              <span class="sub">Med Spa</span>
+            </div>
 
-  <main>
-    <section class="hero-wrap">
-      <div class="container">
-        <div class="eyebrow">Luxury Aesthetics Studio</div>
-        <h1>Visage Skin Laser</h1>
-        <p class="hero-sub">
-          Radiance refined with advanced skin, laser, and corrective treatments tailored to your features, goals, and confidence.
-        </p>
+            <button class="mobile-toggle" id="menuBtn" aria-label="Open menu">
+              <span></span>
+            </button>
 
-        <div class="hero-card" id="results">
-          <div class="hero-grid">
-            <div class="hero-image">
+            <div class="nav-wrap" id="navWrap">
+              <nav class="nav">
+                <a href="#about">About Us</a>
+                <a href="#services">Services</a>
+                <a href="#shop">Shop</a>
+                <a href="#blog">Blog</a>
+                <a href="#contact">Contact</a>
+              </nav>
+              <a class="book-btn" href="YOUR_BOOKING_LINK_HERE" target="_blank" rel="noopener">Book Now</a>
+            </div>
+
+            <a class="book-btn" href="YOUR_BOOKING_LINK_HERE" target="_blank" rel="noopener">Book Now</a>
+          </header>
+
+          <section class="hero">
+            <div class="hero-content">
               <div class="glass-card">
-                <h2>Glow With Precision</h2>
+                <h2>Radiance Refined.<br>Beauty Elevated.</h2>
                 <p>
-                  Elevated care, visible results, and a treatment experience designed to feel calm, polished, and personal.
+                  Experience luxury aesthetic treatments tailored to your glow—
+                  where science meets serenity and every detail is elevated.
                 </p>
-                <a class="btn btn-light" href="https://YOUR-GLOSSGENIUS-LINK.com" target="_blank" rel="noopener noreferrer">Explore Treatments</a>
+                <a class="outline-btn" href="#services">Explore Our Treatments</a>
               </div>
             </div>
+          </section>
 
-            <div class="hero-side">
-              <div class="mini-card">
-                <h3>Refined Results</h3>
-                <p>
-                  Custom facials, laser services, and skin renewal protocols for smoother texture, brighter tone, and confident beauty.
-                </p>
+          <section class="editorial" id="about">
+            <div class="grid-top">
+              <div class="vertical-label panel">
+                <span>About Us</span>
               </div>
-              <div class="mini-card dark">
-                <h3>Confidence, Elevated</h3>
+
+              <article class="panel tall">
+                <img
+                  src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1000&q=80"
+                  alt="Luxury med spa interior"
+                />
+              </article>
+
+              <article class="panel dark tall">
+                <div class="small">Nova Luxe Med Spa</div>
+                <h3>Empowering Beauty,<br>Elevating Confidence</h3>
                 <p>
-                  Thoughtful consultations, modern technology, and luxury-level care that helps every client look fresh, sculpted, and luminous.
+                  At Nova Luxe, beauty is deeply personal. We combine advanced
+                  aesthetic treatments with an elevated guest experience to
+                  deliver refined, natural-looking results that help you feel as
+                  radiant as you look.
                 </p>
-              </div>
+                <a href="#contact" class="light-btn">Learn More</a>
+              </article>
+
+              <article class="panel tall thin-image">
+                <div class="corner-tag">NL</div>
+                <img
+                  src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=700&q=80"
+                  alt="Close up beauty portrait"
+                />
+              </article>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <section class="section" id="about">
-      <div class="container">
-        <div class="grid">
-          <div class="panel about-side">About Us</div>
-          <div class="panel image-soft panel-tall"></div>
-          <div class="panel dark-copy">
-            <h3>Empowering Beauty, Enhancing Skin</h3>
-            <p>
-              At Visage Skin Laser, every treatment is curated with intention. We blend clinical-level expertise with a soft luxury experience so clients leave feeling polished, refreshed, and cared for.
-            </p>
-            <a class="btn btn-light" href="#treatments">Learn More</a>
-          </div>
-        </div>
+            <div class="grid-bottom" id="services">
+              <article class="panel soft">
+                <div class="mini-tag">Our Services</div>
+                <h3>Beauty Beyond Expectations</h3>
+                <p>
+                  From injectables and facials to body contouring and skin
+                  rejuvenation, every service is designed to enhance your
+                  confidence with precision and care.
+                </p>
+              </article>
 
-        <div class="services-grid">
-          <div class="panel services-copy">
-            <h3>Beauty Beyond Expectations</h3>
-            <p>
-              From targeted correction to routine maintenance, your treatment plan is built around healthy skin, visible results, and long-term confidence.
-            </p>
-          </div>
-          <div class="panel services-image-a"></div>
-          <div class="panel services-image-b"></div>
-        </div>
-      </div>
-    </section>
+              <article class="panel">
+                <img
+                  src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=80"
+                  alt="Model with glowing skin"
+                />
+              </article>
 
-    <section class="treatments" id="treatments">
-      <div class="container">
-        <div class="section-heading">
-          <h2>Signature Treatments</h2>
-          <p>Replace these with your real service names, prices, and descriptions.</p>
-        </div>
-
-        <div class="cards">
-          <div class="service-card">
-            <span>01</span>
-            <h4>Laser Hair Removal</h4>
-            <p>Smooth, low-maintenance skin with a personalized treatment plan and modern laser technology.</p>
-          </div>
-          <div class="service-card">
-            <span>02</span>
-            <h4>Skin Rejuvenation</h4>
-            <p>Brighten dullness, soften texture, and support collagen with targeted corrective care.</p>
-          </div>
-          <div class="service-card">
-            <span>03</span>
-            <h4>Acne & Pigment Care</h4>
-            <p>Strategic treatments for breakouts, post-inflammatory marks, and uneven tone.</p>
-          </div>
-          <div class="service-card">
-            <span>04</span>
-            <h4>Custom Facials</h4>
-            <p>Luxury facial experiences tailored to hydration, glow, calming, and skin maintenance.</p>
-          </div>
-        </div>
-
-        <div class="cta" id="contact">
-          <div class="cta-row">
-            <div>
-              <h3>Ready to book your glow-up?</h3>
-              <p>Add your GlossGenius booking link and your domain can point here.</p>
+              <article class="panel right-copy">
+                <div class="mini">Radiance Refined</div>
+                <h4>Look and Feel Your Absolute Best</h4>
+                <p>
+                  Discover modern aesthetics in a calming, luxurious
+                  environment—crafted for women who want subtle, polished, and
+                  powerful results.
+                </p>
+              </article>
             </div>
-            <a class="btn btn-dark" href="https://YOUR-GLOSSGENIUS-LINK.com" target="_blank" rel="noopener noreferrer">Book Appointment</a>
-          </div>
+          </section>
         </div>
       </div>
-    </section>
-  </main>
 
-  <footer>
-    <div class="container footer-box">
-      <div>
-        <strong>Visage Skin Laser</strong><br>
-        visageskinlaser.com
-      </div>
-      <div>
-        Instagram: @visageskinlaser<br>
-        Email: hello@visageskinlaser.com
-      </div>
+      <section class="footer-cta" id="contact">
+        <h2>Luxury Treatments. Seamless Booking.</h2>
+        <p>
+          Ready to elevate your glow? Book your consultation today and create a
+          beauty plan tailored to your features, goals, and lifestyle.
+        </p>
+        <a class="book-btn" href="YOUR_BOOKING_LINK_HERE" target="_blank" rel="noopener">Book Your Appointment</a>
+      </section>
     </div>
-  </footer>
+  </section>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const navWrap = document.getElementById("navWrap");
+
+    menuBtn.addEventListener("click", () => {
+      navWrap.classList.toggle("open");
+    });
+  </script>
 </body>
 </html>
