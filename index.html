@@ -26,8 +26,6 @@
       --card:#f5f1ed;
       --accent:#b28b6c;
       --shadow:0 18px 45px rgba(64,45,32,.16);
-      --radius:24px;
-      --radius-sm:16px;
       --max:1240px;
     }
 
@@ -239,7 +237,7 @@
 
     .grid-top{
       display:grid;
-      grid-template-columns:80px 1.05fr 1fr 170px;
+      grid-template-columns:80px 1.05fr 1fr 190px;
       gap:14px;
       margin-bottom:14px;
       overflow:hidden;
@@ -404,8 +402,8 @@
       display:flex;
       align-items:center;
       justify-content:center;
-      background:radial-gradient(circle at center, #ffffff 0%, #f2f2f0 78%);
-      padding:18px;
+      background:transparent;
+      padding:20px 12px 16px;
       min-width:0;
       overflow:hidden;
     }
@@ -415,9 +413,10 @@
       width:auto;
       height:auto;
       max-width:100%;
-      max-height:84%;
+      max-height:330px;
       object-fit:contain;
       margin:auto;
+      filter:drop-shadow(0 8px 16px rgba(0,0,0,.08));
     }
 
     .footer-cta{
@@ -641,7 +640,7 @@
               <span class="sub">Med Spa</span>
             </div>
 
-            <button class="mobile-toggle" id="menuBtn" aria-label="Open menu">
+            <button class="mobile-toggle" id="menuBtn" aria-label="Abrir menú">
               <span></span>
             </button>
 
@@ -693,7 +692,7 @@
 
               <article class="panel tall thin-image">
                 <div class="corner-tag">Láser</div>
-                <img src="laser.jpg" alt="Tecnología Láser">
+                <img src="laser.png" alt="Tecnología Láser">
               </article>
             </div>
 
@@ -718,6 +717,33 @@
                 <h4>Tratamiento para Hongos en las Uñas</h4>
                 <p>
                   Tratamiento especializado para uñas dañadas, débiles o afectadas por hongos. Este procedimiento ayuda a restaurar la apariencia natural de la uña, mejorar su salud y fortalecer su crecimiento.
+                </p>
+              </article>
+            </div>
+          </section>
+
+          <section class="editorial">
+            <div class="grid-bottom">
+              <article class="panel soft">
+                <div class="mini-tag">Financiamiento</div>
+                <h3>Paga a tu ritmo con Cherry</h3>
+                <p>
+                  Comienza tus tratamientos hoy y paga en cómodos pagos mensuales con Cherry. La aprobación es rápida y el proceso es sencillo.
+                </p>
+              </article>
+
+              <article class="panel">
+                <img
+                  src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1000&q=80"
+                  alt="Belleza y cuidado de la piel"
+                />
+              </article>
+
+              <article class="panel right-copy">
+                <div class="mini">Tecnología Láser</div>
+                <h4>Tecnología Avanzada para Resultados Reales</h4>
+                <p>
+                  Utilizamos tecnología láser avanzada para tratamientos de piel, rejuvenecimiento facial y tratamiento para hongos en las uñas con resultados seguros y efectivos.
                 </p>
               </article>
             </div>
