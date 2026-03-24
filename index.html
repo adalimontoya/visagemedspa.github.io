@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>VISAGE MED SPA</title>
   <meta
     name="description"
-    content="Radiance refined. Elevated beauty treatments tailored to your glow."
+    content="Belleza refinada. Tratamientos estéticos avanzados en Phoenix, Arizona."
   />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,8 +37,7 @@
       margin:0;
       font-family:"Inter", sans-serif;
       color:var(--text);
-      background:
-        linear-gradient(168deg, var(--bg) 0 62%, #f3efea 62% 100%);
+      background:linear-gradient(168deg, var(--bg) 0 62%, #f3efea 62% 100%);
       overflow-x:hidden;
     }
 
@@ -159,6 +158,7 @@
       font-weight:600;
       border:1px solid #000;
       transition:.25s ease;
+      display:inline-block;
     }
 
     .book-btn:hover{
@@ -239,15 +239,17 @@
 
     .grid-top{
       display:grid;
-      grid-template-columns:80px 1.05fr 1fr 120px;
+      grid-template-columns:80px 1.05fr 1fr 170px;
       gap:14px;
       margin-bottom:14px;
+      overflow:hidden;
     }
 
     .grid-bottom{
       display:grid;
       grid-template-columns:1fr 1.05fr .8fr;
       gap:14px;
+      overflow:hidden;
     }
 
     .panel{
@@ -311,10 +313,11 @@
       position:absolute;
       top:18px;
       left:18px;
-      font-size:1.1rem;
+      font-size:1rem;
       letter-spacing:.08em;
       color:#2c2521;
       text-transform:uppercase;
+      z-index:2;
     }
 
     .panel.dark .small{
@@ -396,6 +399,27 @@
       color:#6d625c;
     }
 
+    .thin-image{
+      position:relative;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:radial-gradient(circle at center, #ffffff 0%, #f2f2f0 78%);
+      padding:18px;
+      min-width:0;
+      overflow:hidden;
+    }
+
+    .thin-image img{
+      display:block;
+      width:auto;
+      height:auto;
+      max-width:100%;
+      max-height:84%;
+      object-fit:contain;
+      margin:auto;
+    }
+
     .footer-cta{
       padding:78px 0 92px;
       text-align:center;
@@ -454,6 +478,20 @@
     .mobile-toggle span{ top:21px; }
     .mobile-toggle::before{ top:14px; }
     .mobile-toggle::after{ top:28px; }
+
+    .cherry-btn{
+      position:fixed;
+      bottom:20px;
+      right:20px;
+      background:#7a4cff;
+      color:white;
+      padding:15px 20px;
+      text-decoration:none;
+      border-radius:30px;
+      font-weight:700;
+      box-shadow:0 5px 15px rgba(0,0,0,0.3);
+      z-index:999;
+    }
 
     @media (max-width: 1100px){
       .grid-top{
@@ -577,36 +615,13 @@
       .footer-cta{
         padding:60px 0 72px;
       }
-      
-.thin-image {
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: transparent;
-  padding: 18px;
-  min-width: 0;
-}
 
-.thin-image img {
-  width: auto;
-  height: auto;
-  max-width: 100%;
-  max-height: 85%;
-  object-fit: contain;
-  display: block;
-}
-}
-
-.grid-top,
-.grid-bottom {
-  overflow: hidden;
-}
-
-body {
-  overflow-x: hidden;
-}
+      .cherry-btn{
+        bottom:14px;
+        right:14px;
+        padding:13px 16px;
+        font-size:.92rem;
+      }
     }
   </style>
 </head>
@@ -614,8 +629,8 @@ body {
   <section class="hero-wrap">
     <div class="container">
       <div class="brand-intro">
-        <h1>Visage Med Spa </h1>
-        <p class="eyebrow">Clinica Médica en Phoenix, Arizona</p>
+        <h1>Visage Med Spa</h1>
+        <p class="eyebrow">Clínica Médica en Phoenix, Arizona</p>
       </div>
 
       <div class="site-shell">
@@ -632,16 +647,14 @@ body {
 
             <div class="nav-wrap" id="navWrap">
               <nav class="nav">
-                <a href="#about">About Us</a>
-                <a href="#services">Services</a>
-                <a href="#shop">Shop</a>
-                <a href="#blog">Blog</a>
-                <a href="#contact">Contact</a>
+                <a href="#about">Sobre Nosotros</a>
+                <a href="#services">Servicios</a>
+                <a href="#contact">Contacto</a>
               </nav>
-              <a class="book-btn" href="YOUR_BOOKING_LINK_HERE" target="_blank" rel="noopener">Book Now</a>
+              <a class="book-btn" href="https://nadiamontoya.glossgenius.com/" target="_blank" rel="noopener">Reservar</a>
             </div>
 
-            <a class="book-btn" href="YOUR_BOOKING_LINK_HERE" target="_blank" rel="noopener">Book Now</a>
+            <a class="book-btn" href="https://nadiamontoya.glossgenius.com/" target="_blank" rel="noopener">Reservar</a>
           </header>
 
           <section class="hero">
@@ -649,10 +662,9 @@ body {
               <div class="glass-card">
                 <h2>Belleza Refinada.<br>Luce y siéntete en tu mejor versión.</h2>
                 <p>
-                  Descubre tratamientos estéticos modernos en un ambiente
-                  relajante y lujoso, diseñados para quienes buscan resultados naturales, elegantes y duraderos.
+                  Descubre tratamientos estéticos modernos en un ambiente relajante y lujoso, diseñados para quienes buscan resultados naturales, elegantes y duraderos.
                 </p>
-                <a class="outline-btn" href="#services">Explore Our Treatments</a>
+                <a class="outline-btn" href="#services">Explorar Tratamientos</a>
               </div>
             </div>
           </section>
@@ -660,44 +672,44 @@ body {
           <section class="editorial" id="about">
             <div class="grid-top">
               <div class="vertical-label panel">
-                <span>About Us</span>
+                <span>Sobre Nosotros</span>
               </div>
 
               <article class="panel tall">
                 <img
                   src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1000&q=80"
-                  alt="Luxury med spa interior"
+                  alt="Interior de med spa"
                 />
               </article>
 
               <article class="panel dark tall">
                 <div class="small">Visage Med Spa</div>
-                <h3>Realizando la belleza,<br>Elevando la confianza</h3>
+                <h3>Realzando la belleza,<br>elevando la confianza</h3>
                 <p>
-                  En Visage Med Spa, la belleza es algo profundamente personal. Combinamos tratamientos estéticos avanzados 
-                  con una experiencia premium para ofrecer resultados refinados y naturales que te ayudan a sentirte tan radiante como te ves.
+                  En Visage Med Spa, la belleza es algo profundamente personal. Combinamos tratamientos estéticos avanzados con una experiencia premium para ofrecer resultados refinados y naturales que te ayudan a sentirte tan radiante como te ves.
                 </p>
                 <a href="#contact" class="light-btn">Más Información</a>
               </article>
 
-        <article class="panel tall thin-image">
-  <div class="corner-tag"></div>
-  <img src="laser.jpg" alt="Tecnología Láser">
-</article>
+              <article class="panel tall thin-image">
+                <div class="corner-tag">Láser</div>
+                <img src="laser.jpg" alt="Tecnología Láser">
+              </article>
+            </div>
+
             <div class="grid-bottom" id="services">
               <article class="panel soft">
                 <div class="mini-tag">Nuestros Servicios</div>
                 <h3>Belleza Más Allá de las Expectativas</h3>
                 <p>
-                  Desde inyectables y faciales hasta contorno corporal y rejuvenecimiento de la piel, cada servicio está
-                  diseñado para mejorar tu confianza con precision y cuidado.
+                  Desde inyectables y faciales hasta contorno corporal y rejuvenecimiento de la piel, cada servicio está diseñado para mejorar tu confianza con precisión y cuidado.
                 </p>
               </article>
 
               <article class="panel">
                 <img
                   src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=80"
-                  alt="Model with glowing skin"
+                  alt="Modelo con piel radiante"
                 />
               </article>
 
@@ -705,8 +717,7 @@ body {
                 <div class="mini">Especialidad</div>
                 <h4>Tratamiento para Hongos en las Uñas</h4>
                 <p>
-                  Tratamiento especializado para uñas dañadas, débiles o afectadas por hongos. Este procedimiento ayuda
-                  a restaurar la apariencia natrual de la uña, mejorar su salud y fortalecer su crecimiento.
+                  Tratamiento especializado para uñas dañadas, débiles o afectadas por hongos. Este procedimiento ayuda a restaurar la apariencia natural de la uña, mejorar su salud y fortalecer su crecimiento.
                 </p>
               </article>
             </div>
@@ -715,29 +726,24 @@ body {
       </div>
 
       <section class="footer-cta" id="contact">
-        <h2>Tratamientos de Lujo. Reservas Fàciles.</h2>
+        <h2>Tratamientos de Lujo. Reservas Fáciles.</h2>
         <p>
-        Listo paea realizar tu tratamiento? Agenda tu consulta hoy y crea un plan personalizado según tus facciones, objetivos y estilo de vida.
+          ¿Lista para realzar tu belleza? Agenda tu consulta hoy y crea un plan personalizado según tus facciones, objetivos y estilo de vida.
         </p>
-        <a class="book-btn" href="https://nadiamontoya.glossgenius.com/ target="_blank" rel="noopener">Book Your Appointment</a>
+        <a class="book-btn" href="https://nadiamontoya.glossgenius.com/" target="_blank" rel="noopener">Reservar Cita</a>
       </section>
     </div>
   </section>
-<a href="https://pay.withcherry.com/visageslaser?utm_source=practice&utm_medium=website&m=1964 
-   style="
-   position:fixed;
-   bottom:20px;
-   right:20px;
-   background:#7a4cff;
-   color:white;
-   padding:15px 20px;
-   text-decoration:none;
-   border-radius:30px;
-   font-weight:bold;
-   box-shadow:0 5px 15px rgba(0,0,0,0.3);
-   z-index:999;">
-   Pay with Cherry 
-</a>
+
+  <a
+    class="cherry-btn"
+    href="https://pay.withcherry.com/visageslaser?utm_source=practice&utm_medium=website&m=1964"
+    target="_blank"
+    rel="noopener"
+  >
+    Paga con Cherry
+  </a>
+
   <script>
     const menuBtn = document.getElementById("menuBtn");
     const navWrap = document.getElementById("navWrap");
